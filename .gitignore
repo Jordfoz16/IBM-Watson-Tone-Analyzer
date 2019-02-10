@@ -1,12 +1,13 @@
 
-# Created by https://www.gitignore.io/api/java,intellij
-# Edit at https://www.gitignore.io/?templates=java,intellij
+# Created by https://www.gitignore.io/api/java,maven,intellij
+# Edit at https://www.gitignore.io/?templates=java,maven,intellij
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+.idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -106,12 +107,16 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-*.DS_Store
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-# End of https://www.gitignore.io/api/java,intellij
-.idea/uiDesigner.xml
-.idea/misc.xml
-.idea/misc.xml
-.idea/misc.xml
-.idea/workspace.xml
-Watson.iml
+# End of https://www.gitignore.io/api/java,maven,intellij
