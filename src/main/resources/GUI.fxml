@@ -9,7 +9,7 @@
 <Pane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jordan.Controller">
    <children>
       <Button fx:id="btnClose" cancelButton="true" layoutX="14.0" layoutY="376.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="159.0" text="Close" />
-      <Label fx:id="txtTitle" layoutX="14.0" layoutY="14.0" text="Watson Emtion Analysis">
+      <Label fx:id="txtTitle" layoutX="14.0" layoutY="14.0" text="Watson Emotion Analysis">
          <font>
             <Font size="23.0" />
          </font>
