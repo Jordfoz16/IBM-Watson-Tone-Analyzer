@@ -19,6 +19,6 @@ public class Controller {
     }
 
     public void close(ActionEvent event){
-        System.out.println("Hello World");
+        System.exit(0);
     }
 }
