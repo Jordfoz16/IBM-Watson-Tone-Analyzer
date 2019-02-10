@@ -2,6 +2,8 @@ package com.jordan.watson;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import com.jordan.API_File;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,10 +16,17 @@ import com.ibm.watson.developer_cloud.tone_analyzer.v3.model.ToneOptions;
 
 public class Watson
 {
+    private ToneAnalysis toneAnalysis;
+    private String api_key;
 
-    public String start(String text) {
+    public Watson(String api_key){
+        this.api_key = api_key;
+    }
+
+    private void watsonToneAnalysis(String text) {
+
         IamOptions options = new IamOptions.Builder()
-                .apiKey("wEarLSXTHai8oJxQD8tyDOyoh54_7a6nMLQY05MeB805")
+                .apiKey(api_key)
                 .build();
 
         ToneAnalyzer toneAnalyzer = new ToneAnalyzer("2017-09-21", options);
@@ -28,7 +37,12 @@ public class Watson
                 .text(text)
                 .build();
 
-        ToneAnalysis toneAnalysis = toneAnalyzer.tone(toneOptions).execute();
+        toneAnalysis = toneAnalyzer.tone(toneOptions).execute();
+    }
+
+    public String getResult(String text){
+
+        watsonToneAnalysis(text);
 
         JSONParser parser = new JSONParser();
 
