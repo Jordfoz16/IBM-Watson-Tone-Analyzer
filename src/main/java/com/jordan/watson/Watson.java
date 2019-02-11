@@ -40,13 +40,13 @@ public class Watson
         toneAnalysis = toneAnalyzer.tone(toneOptions).execute();
     }
 
-    public String getResult(String text){
+    public ArrayList<Emotion> getResult(String text){
 
         watsonToneAnalysis(text);
 
         JSONParser parser = new JSONParser();
 
-        StringBuilder ss = new StringBuilder();
+        ArrayList<Emotion> emotionList = new ArrayList<Emotion>();
 
         try {
             JSONObject jsonObject = (JSONObject) parser.parse(toneAnalysis.toString());
@@ -68,14 +68,16 @@ public class Watson
             }
 
             for(int i = 0; i < myList.size(); i++) {
-                ss.append("Emotion: " + myList.get(i).get("tone_name") + "\n");
-                ss.append("Score: " + myList.get(i).get("score") + "\n\n");
+                String emotion = myList.get(i).get("tone_name").toString();
+                String score = myList.get(i).get("score").toString();
+
+                emotionList.add(new Emotion(emotion, score));
             }
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        return ss.toString();
+        return emotionList;
     }
 }
