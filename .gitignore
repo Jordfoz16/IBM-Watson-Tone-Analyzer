@@ -151,3 +151,4 @@ buildNumber.properties
 *.json
 
 # End of https://www.gitignore.io/api/java,maven,macos,intellij
+.DS_Store
